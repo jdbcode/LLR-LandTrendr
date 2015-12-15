@@ -1,8 +1,9 @@
 pro create_image_info_llr, path
 
   ;path = "K:\test\045030\composites\"
-  
-  imgfiles = file_search(path, '*composite.bsq', count=n_imgfiles)
+  search = path+'*composite.bsq'
+  imgfiles = file_search(search, count=n_imgfiles)
+  ;imgfiles = file_search(path, '*composite.bsq', count=n_imgfiles)
   
   
   base = { image_file:'none', $

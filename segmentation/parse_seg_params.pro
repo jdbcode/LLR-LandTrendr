@@ -159,9 +159,9 @@ function parse_seg_params, outdir, segparamstxt, image_info_savefile, mask_image
         if evalnum lt 10 then name = strcompress("eval"+'0'+string(evalnum)+"_", /rem) $
         else name = strcompress("eval"+strtrim(string(evalnum),2)+"_", /rem)
       endif else name = "eval01_"
-      theruns[i].output_base = outbase+name+timestamp()
+      theruns[i].output_base = outbase+name  ;+timestamp()
     endif else begin 
-      theruns[i].output_base = outbase+theruns[i].run_name+timestamp()
+      theruns[i].output_base = outbase+theruns[i].run_name  ;+timestamp()
       if keyword_set(resume) eq 1 then begin
         previous_file = file_search(file_dirname(outbase), '*'+theruns[i].run_name+'*_diag.sav', count=pn)
         ;assume only one set for each parameter set
