@@ -156,9 +156,9 @@ function parse_seg_params, outdir, segparamstxt, image_info_savefile, mask_image
         pos = strpos(evals, "eval")
         checkit = strmid(evals,(pos+4),2)
         evalnum = max(fix(checkit))+1
-        if evalnum lt 10 then name = strcompress("eval"+'0'+string(evalnum)+"_", /rem) $
-        else name = strcompress("eval"+strtrim(string(evalnum),2)+"_", /rem)
-      endif else name = "eval01_"
+        if evalnum lt 10 then name = strcompress("eval"+'0'+string(evalnum), /rem) $ ;+"_"
+        else name = strcompress("eval"+strtrim(string(evalnum),2), /rem) ;+"_"
+      endif else name = "eval01" ; "eval01_" 
       theruns[i].output_base = outbase+name  ;+timestamp()
     endif else begin 
       theruns[i].output_base = outbase+theruns[i].run_name  ;+timestamp()
