@@ -80,7 +80,7 @@ function parse_seg_params, outdir, segparamstxt, image_info_savefile, mask_image
       if variable[j] eq 'vertexcountovershoot' then theruns[i].vertexcountovershoot = fix(splitup[i])
       if variable[j] eq 'bestmodelproportion' then theruns[i].bestmodelproportion = float(splitup[i])
       
-      if variable[j] eq 'run_name' then if splitup[i] ne 'na' then theruns[i].run_name = splitup[i]+"_" else theruns[i].run_name = ""
+      if variable[j] eq 'run_name' then if splitup[i] ne 'na' then theruns[i].run_name = splitup[i]+"" else theruns[i].run_name = "" ;took out"_" from statement right after then
       
       ;deal with the mask_image_keyword
       if variable[j] eq 'mask_image' then begin
