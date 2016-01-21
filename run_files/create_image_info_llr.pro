@@ -4,6 +4,12 @@ pro create_image_info_llr, path
   search = path+'*composite.bsq'
   imgfiles = file_search(search, count=n_imgfiles)
   ;imgfiles = file_search(path, '*composite.bsq', count=n_imgfiles)
+  if n_imgfiles eq 0 then begin
+    print, ">>> error - could not find any composite files in this directory:"
+    print, path
+    print, ">>> make sure that the 'llr_composite_dir' variable path is correct and ends with a '\' character"
+    stop
+  endif 
   
   
   base = { image_file:'none', $
