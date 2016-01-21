@@ -7,7 +7,7 @@ llr_composite_dir = "K:\test\composite\tca\"
 lt_output_dir = "K:\test\composite\landtrendr\"
 seg_params_txt = "K:\test\composite\landtrendr\tca_segmentation_parameters.txt"
 mask_image = "K:\test\composite\useareafile.bsq"
-eval = 1
+eval = 0
 resume = 0
 
 
