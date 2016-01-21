@@ -1,11 +1,11 @@
-pro run_lt_llr
+pro run_llr_lt_seg_and_fit, llr_composite_dir, lt_output_dir, seg_params_txt, mask_image, eval, resume
 
-  llr_composite_dir = "K:\test\composite\tca\"
-  lt_output_dir = "K:\test\composite\landtrendr\"
-  seg_params_txt = "K:\test\composite\landtrendr\tca_segmentation_parameters.txt"
-  mask_image = "K:\test\composite\useareafile.bsq"
-  eval = 0
-  resume = 0
+  ;llr_composite_dir = "K:\test\composite\tca\"
+  ;lt_output_dir = "K:\test\composite\landtrendr\"
+  ;seg_params_txt = "K:\test\composite\landtrendr\tca_segmentation_parameters.txt"
+  ;mask_image = "K:\test\composite\useareafile.bsq"
+  ;eval = 1
+  ;resume = 0
   
   
   ;############################################################################################
