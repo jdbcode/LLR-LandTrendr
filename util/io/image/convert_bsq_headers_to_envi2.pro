@@ -118,7 +118,6 @@ pro convert_bsq_headers_to_envi2, path, template_bsq_file, overwrite=overwrite, 
   ;end
   
   for i = 0, n-1 do begin
-    i=0
     file = bsq_files[i]
     
     ;if keyword_set(pattern) then begin
