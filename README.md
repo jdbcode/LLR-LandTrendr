@@ -17,11 +17,11 @@ Contact kennedyr@bu.edu for more on any of this."
 
 # Instructions
 
-**These instructions are a work in progress please, email me with any missing info that prevents running or suggestions for clarification.**
+**These instructions are a work in progress, please email me with any missing info that prevents running, or suggestions for clarification.**
 
 ### Downloading
 
-Click on the "release" tab above and download the most recent version's .zip or .tar.gz source code. decompress the code and place the code library somewhere that makes sense with your system of organization.
+Click on the "release" tab above and download the most recent version's .zip or .tar.gz source code. Decompress the code and place the code library somewhere that makes sense with your system of organization.
 
 ### Installing the IDL LandTrendr code
 
@@ -51,3 +51,4 @@ The last step is to edit the batchfile. Open the copied/pasted "run_llr_lt_seg_a
 When you have finished editing the batchfile, save it and in the IDL command prompt type the @ symbol followed by the full path to the "run_llr_lt_seg_and_fit_batchfile.pro" file you just edited enclosed in quotes and hit enter. Example: @"K:\test\composite\landtrendr\tca_run_llr_lt_seg_and_fit_batchfile.pro"
 
 IDL should be cranking away and a progress bar should be reporting its status. Files should be generated in a spectral index subfolder of the LandTrendr outputs folder you defined. You need to repeat the above steps for all spectral indices you want processed with LandTrendr. I use the same LandTrendr folder and just make new copies of the "segmentation_parameters.txt" and "run_llr_lt_seg_and_fit_batchfile.pro" files with unique spectral indices appended to the file names.
+
