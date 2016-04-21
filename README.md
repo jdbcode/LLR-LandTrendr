@@ -60,18 +60,18 @@ In the prior step, the LandTrendr segmentation algorithm identified periods of t
 
 For example, we are often interested in capturing disturbance events such as fires or landslides. To determine whether a given pixel might be in this class, we define a class whose spectral change "looks like" a disturbance that occurs quickly, and is of high magnitude. We may also be interested in limiting this to events that have occurred only recently, say after the year 2000. Capturing such phenomena of interest is the critical process of defining the rules used to map pixels into change classes.  We call this "change labeling".
 
+The process of change labeling produces rasters "maps" of change per change class defined by the user. These maps distill all of the information contained in a stack of time-series images into highly interpretable layers that deliniate the spatial boundary of individual change events, describes the year of change onset, the magnitude of change, and the duration of the event.
+
 Change labeling and spatial filtering is achieved by running an IDL batchfile provided with the code library. The batchfile requires 3 types of inputs:
 
 1. A "*diag.sav" file path that provides information about the spectral segmentation and fitting run completed in previous step
-2. A set of parameters that defines how thresholds will be applied to each segment of the fitted spectral files
-3. A list of change classes
-4. (optional) A cover model that converts specrtal values to percent vegetative cover
+2. A set of parameters that defines how thresholds will be applied to each segment of the fitted spectral files as well as process control inputs 
+3. A list of change classes to be identified
+4. (optional) A cover model that converts spectral values to percent vegetative cover
 
-The label parameter file defines how thresholds will be applied to each segment, before it is evaluated for class code matching.  
+We'll get into the specifics of actually filling these out in the batchfile, but first some backgound information on parts of these inputs.
 
-The threshold is evaluated by comparing the starting and ending point of the segment.  
-
-Typically, we convert the original spectral values to a converted index related to vegetative cover.  This has pros and cons. Changes can be expressed in terms that have some physical meaning, and by providing a concept for the value zero, relative change can be calculated in a meaningful way.  However, the calculation of a derived vegetative cover index requires good reference data, and even in the best case is often a noisy relationship with any single spectral index. Thus, the conversion to vegetative cover can introduce error.  
+Typically, we convert the original spectral values to a converted index related to vegetative cover (4th optional input).  This has pros and cons. Changes can be expressed in terms that have some physical meaning, and by providing a concept for the value zero, relative change can be calculated in a meaningful way.  However, the calculation of a derived vegetative cover index requires good reference data, and even in the best case is often a noisy relationship with any single spectral index. Thus, the conversion to vegetative cover can introduce error.  
 
 Note that the cover model must be built to match the index used for segmentation:  If NBR is used for segmentation, the cover model used for labeling must link NBR to a percent cover number.  
 
