@@ -10,7 +10,7 @@ This set of code allows images produced by the LandsatLinkr image processing sys
 
 Any use of this alorithm should give due credit:
 
-Kennedy, Robert E., Yang, Zhiqiang, & Cohen, Warren B. (2010). Detecting trends in forest disturbance and recovery using yearly Landsat time series: 1. LandTrendr - Temporal segmentation algorithms. Remote Sensing of Environment, 114, 2897-2910
+[Kennedy, Robert E., Yang, Zhiqiang, & Cohen, Warren B. (2010). Detecting trends in forest disturbance and recovery using yearly Landsat time series: 1. LandTrendr - Temporal segmentation algorithms. Remote Sensing of Environment, 114, 2897-2910](http://larse.forestry.oregonstate.edu/sites/larse/files/pub_pdfs/Kennedy_etal_2010.pdf)
 
 If it's critical to work you'll submit as a paper, please consider engaging Robert Kennedy as a co-author. If you make money from it, you need to develop an agreement with Oregon State University and Boston University.
 Contact kennedyr@bu.edu for more on any of this."
