@@ -15,4 +15,4 @@ Kennedy, Robert E., Yang, Zhiqiang, & Cohen, Warren B. (2010). Detecting trends 
 If it's critical to work you'll submit as a paper, please consider engaging Robert Kennedy as a co-author. If you make money from it, you need to develop an agreement with Oregon State University and Boston University.
 Contact kennedyr@bu.edu for more on any of this."
 
-For more information and instructions on running the batchfiles, please visit the [wiki](https://github.com/jdbcode/LLR-LandTrendr/wiki) page.
+## For more information and instructions on running the batchfiles, please visit the [wiki](https://github.com/jdbcode/LLR-LandTrendr/wiki) page.
