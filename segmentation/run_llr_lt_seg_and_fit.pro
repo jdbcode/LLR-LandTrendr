@@ -43,6 +43,11 @@ pro run_llr_lt_seg_and_fit, llr_composite_dir, lt_output_dir, seg_params_txt, ma
   
   search = llr_composite_dir+'*.hdr'
   templatehdr = file_search(search, count=n_files)
+  if n_files eq 0 then begin
+    print, ">>> error - could not find *.hdr file for use as a template in this directory:"
+    print, llr_composite_dir
+    stop
+  endif
   templatehdr = templatehdr[0]
   outdirpath = file_dirname(params[0].output_base)
   convert_bsq_headers_to_envi2, outdirpath, templatehdr
