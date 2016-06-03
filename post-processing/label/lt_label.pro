@@ -146,18 +146,20 @@ function lt_label, run_params, subset=subset, output_path=output_path, sspan=ssp
     ;b_ftv_file = simple_core_name + "_brightness_ftv_fitted.bsq"
     ;g_ftv_file = simple_core_name + "_greenness_ftv_fitted.bsq"
     ;w_ftv_file = simple_core_name + "_wetness_ftv_fitted.bsq"
-    if file_exists(b_ftv_file) eq 0 then return, {ok:0, message: 'fitted brightness does not exist. turn off "extract_tc_ftv", or create fitted outputs for tc brightness'}
-    if file_exists(g_ftv_file) eq 0 then return, {ok:0, message: 'fitted greenness does not exist. turn off "extract_tc_ftv", or create fitted outputs for tc greenness'}
-    if file_exists(w_ftv_file) eq 0 then return, {ok:0, message: 'fitted wetness does not exist. turn off "extract_tc_ftv", or create fitted outputs for tc wetness'}
+    check = 0
+    if file_exists(b_ftv_file) eq 0 then print, 'warning: fitted brightness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc brightness' & check = check+1;return, {ok:0, message: 'fitted brightness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc brightness'}
+    if file_exists(g_ftv_file) eq 0 then print, 'warning: fitted greenness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc greenness' & check = check+1 ;return, {ok:0, message: 'fitted greenness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc greenness'}
+    if file_exists(w_ftv_file) eq 0 then print, 'warning: fitted wetness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc wetness' & check = check+1 ;return, {ok:0, message: 'fitted wetness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc wetness'}
+    if check gt 0 then stop
   end
   
   
-  if file_exists(vertval_file) eq 0 then return, {ok:0, message: 'Vertval image not found'}
-  if file_exists(vertyr_file) eq 0 then return, {ok:0, message: 'Vertyr image not found'}
+  if file_exists(vertval_file) eq 0 then stop, 'Vertval image not found' ;return, {ok:0, message: 'Vertval image not found'}
+  if file_exists(vertyr_file) eq 0 then stop, 'Vertyr image not found' ;return, {ok:0, message: 'Vertyr image not found'}
 
   ; Look only for END_YEAR image if parameter was set to 0
-  if end_year eq 0 and file_exists(endyear_file) eq 0 then return, {ok:0, message: 'Endyear image not found'}
-  if start_year eq 0 and file_exists(startyear_file) eq 0 then return, {ok:0, message: 'Startyear image not found'}
+  if end_year eq 0 and file_exists(endyear_file) eq 0 then stop, 'Endyear image not found' ;return, {ok:0, message: 'Endyear image not found'}
+  if start_year eq 0 and file_exists(startyear_file) eq 0 then stop, 'Startyear image not found' ;return, {ok:0, message: 'Startyear image not found'}
 
   ;next parse class rules
   ok = parse_class_codes(class_codes)
