@@ -12,15 +12,15 @@ pre_dist_cover       = 20
 pct_tree_gain        = 5
 collapse_dist_angle  = 15
 collapse_recv_angle  = 15
-run_name             = "tcangle_lt_labels_adj_10000"
+run_name             = "tcangle_lt_labels"
 merge_recovery       = "yes" ; "yes" or "no"
-extract_tc_ftv       = "yes"  ; "yes" or "no"
+extract_tc_ftv       = "no"  ; "yes" or "no"
 use_relative_mag     = "no"  ; "yes" or "no"
 end_year             = -1
 start_year           = -1
 
 label_codes = [ $
-  '3#greatest_disturbance#Y#GDXX0000X00X00#XXXX0000X00X00,              0, 0, 11, 11, 0, 4' $
+  '3#greatest_disturbance#Y#GDXX0000X00X00#XXXX0000X00X00,              1, 1, 11, 11, 0, 4' $
   ] ;last entry should not have a comma, just a $    ;see example lineup below
   
 ;example label codes and filtering parameters - copy paste them into the above "label_codes" variable as needed  
