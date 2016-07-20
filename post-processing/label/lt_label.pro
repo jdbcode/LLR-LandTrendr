@@ -147,9 +147,18 @@ function lt_label, run_params, subset=subset, output_path=output_path, sspan=ssp
     ;g_ftv_file = simple_core_name + "_greenness_ftv_fitted.bsq"
     ;w_ftv_file = simple_core_name + "_wetness_ftv_fitted.bsq"
     check = 0
-    if file_exists(b_ftv_file) eq 0 then print, 'warning: fitted brightness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc brightness' & check = check+1;return, {ok:0, message: 'fitted brightness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc brightness'}
-    if file_exists(g_ftv_file) eq 0 then print, 'warning: fitted greenness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc greenness' & check = check+1 ;return, {ok:0, message: 'fitted greenness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc greenness'}
-    if file_exists(w_ftv_file) eq 0 then print, 'warning: fitted wetness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc wetness' & check = check+1 ;return, {ok:0, message: 'fitted wetness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc wetness'}
+    if file_exists(b_ftv_file) eq 0 then begin 
+      print, 'warning: fitted brightness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc brightness'
+      check = check+1;return, {ok:0, message: 'fitted brightness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc brightness'}
+    endif    
+    if file_exists(g_ftv_file) eq 0 then begin
+      print, 'warning: fitted greenness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc greenness'
+      check = check+1 ;return, {ok:0, message: 'fitted greenness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc greenness'}
+    endif
+    if file_exists(w_ftv_file) eq 0 then begin
+      print, 'warning: fitted wetness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc wetness'
+      check = check+1 ;return, {ok:0, message: 'fitted wetness does not exist. turn off "extract_tc_ftv", or create landtrendr fitted outputs for tc wetness'}
+    endif
     if check gt 0 then stop
   end
   
